@@ -1,0 +1,66 @@
+
+#mainBody {
+
+  background-color: rgb(80, 80, 80);
+  margin: auto;
+  width: 60%;
+  padding: 10%;
+  height: max-content;
+
+}
+
+form {
+  margin: auto;
+  width: 60%;
+}
+
+textarea {
+  resize: none;
+  
+  border: 2px solid lightseagreen;
+  border-radius: 1em;
+  padding: 0.5em;
+
+  display: block;
+  margin : 0 auto;
+
+  font-size: 20px;
+
+  width: 8em; /*https://www.w3schools.com/css/css3_transitions.asp*/
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+  
+/* When the input field gets focus, change its width to 100% */
+textarea:focus {
+  width: 100%;
+}
+
+input[type=submit] {
+
+  border: 2px solid red;
+  background-color: rgb(255, 173, 173);
+  border-radius: 4em;
+  text-align: center;
+  font-size: large;
+
+  margin: 0 auto;
+  width: 12%;
+
+  cursor: pointer;
+
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+
+}
+
+input[type=submit]:hover {
+  background-color: rgb(253, 138, 138);
+
+  width: 15%;
+}
+
+.error {
+  color: red;
+  visibility: hidden;
+}

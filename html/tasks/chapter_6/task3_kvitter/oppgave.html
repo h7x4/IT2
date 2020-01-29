@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Kvitter</title>
+        <link rel="stylesheet" href="../../../../resources/css/main.css">
+        <link rel="stylesheet" href="./custom.css">
+        <script async src="./script.js"></script>
+    </head>
+    <body>
+        
+        <h1>Kvitter - Skriv innlegg</h1>
+
+        <div id=mainBody>
+
+            <form id=postData autocomplete="off">
+
+                <textarea id="postText"
+                    rows="5"
+                    cols="10"
+                    maxlength="100"
+                    wrap="soft"
+                    placeholder="Skriv noe her!" 
+                    autofocus
+                    required></textarea>
+                <p style="text-align: right;"><span id="charNum"></span>/100</p>
+
+                <h2>Captcha</h2>
+
+                <p id="captchaQuestion"></p>
+
+                <input type="number" pattern="[0-10]" id="captchaAnswer" required><br>
+                <p class="error" id="captchaError"> Du svarte feil. Prøv igjen.</p> <br>
+                Hvilken dag er det i dag? <input type="date" id="date"> <br>
+                <p class="error" id=dateError>Feil dato. Prøv igjen.</p>
+                <input type="submit" value="Post">
+
+            </form>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+html {
+
+
+}
+
+@font-face {
+  font-family: 'Karate';
+  src:  url('Karate.ttf') format('truetype');
+}
+
+body {
+  margin: 0%;
+  padding: 0%;
+  border: 0%;
+  background-color: rgb(32, 32, 32);
+}
+  
+h1 {
+    color: rgb(0, 255, 13);
+    text-align: center;
+    font-size: 5em;
+    font-family: Karate;
+}
+
+
+p, h2, h3, h4, h5 {
+  color: white;
+}
+
+a { color: rgb(49, 188, 216); }
+a:hover { color: rgb(42, 255, 5); }
+
+.header{ /* This is an example of a class */
+
+
+
+}
+
+#video{ /* This is an example of an ID */
+
+
+}
+
+#linkimage{
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  width: 10em;
+  height: 10em;
+}

@@ -1,0 +1,15 @@
+.textboxGrid {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ justify-content: space-evenly;
+}
+
+.textboxGridElement {
+    justify-self: center;
+    align-self: center;
+    width: 30%;
+    margin: 1em;
+    place-self: center;
+    background-color: rgb(120, 120, 120);
+    padding: 40px;
+}

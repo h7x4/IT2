@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../../resources/css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML -->
+    <h1 id="header_1">Header</h1>
+    <p id="paragraph_1">A paragraph</p>
+    <button type="button" id="button_1">Do something!</button>
+    <br>
+    <p>Button clicks: <span id="counter">0</span></p>
+
+    
+
+    <!-- Script -->
+    <script>
+        console.log("The script is working");
+        //alert("Test");
+        document.write("<p>test</p>");
+
+        //var navn = prompt("What is your name?"); //XSS not possible
+        //console.log("Name: " + navn)
+
+        var num1 = 3;
+        var num2 = 4;
+        var Oneplus2 = num1 + num2; //Variable name cannot start with a number?
+        console.log("Num1 and num2 is: " + Oneplus2);
+        console.log("Num1 and num2 is: " + num1 + num2); //Wrong. Need to escape string type
+        console.log("Num1 and num2 is: " + (num1 + num2)); //Right.
+        
+        //num = parseInt(prompt("Tall1: "));
+
+
+        var clickcount = 0;
+        var button_1 = document.getElementById("button_1");
+        button_1.onclick = go; //Be careful not to write () or the function will execute upon site loading and not react to the button.
+
+        function go(){
+            var paragraph1 = document.getElementById("paragraph_1");
+            paragraph1.innerHTML = "New paragraph"
+
+            document.getElementById("header_1").innerHTML = "New Header";
+
+            clickcount += 1; //JS allows these ways of writing math
+            document.getElementById("counter").innerHTML = clickcount;
+            
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rot n</title>
+    <link rel="stylesheet" href="../../../../resources/css/main.css">
+    <script async src="script.js"></script>
+</head>
+<body>
+    
+    <h1>Rot(n)</h1>
+
+    <h2>Encryption</h2>
+    <form id="encrypt">
+        Message<br>
+        <input type="text" name="Message" id="emess">
+         Cipher:
+        <input type="number" name="Cipher" min="0" max="26" id="enum"> 
+        <input type="submit" value="Submit">
+      </form>
+
+      <p id="etext"></p>
+
+      <h2>Decryption</h2>
+      <form id="decrypt">
+        Message<br>
+        <input type="text" name="Message" id="dmess">
+        Cipher: 
+        <input type="number" name="Cipher" min="0" max="26" id="dnum"> 
+        <input type="submit" value="Submit">
+      </form>
+
+      <p id="dtext"></p>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+h1{
+    color: rgb(130, 130, 255);
+    text-align: center;
+}
+
+h3{
+    color: rgb(140, 255, 130); 
+}
+
+body{
+    background-color: rgb(36, 36, 36);
+    margin-left: 10%;
+    color: white;
+}
+
+a{
+    color: turquoise;
+}

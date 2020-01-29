@@ -1,0 +1,123 @@
+body {
+
+    --blue: rgb(40, 131, 208);
+    --green: rgb(145, 226, 44);
+    --red: rgb(249, 38, 119);
+    --yellow: rgb(253, 151, 31);
+    --purple: rgb(174, 129, 255);
+
+    --grey1: rgb(40, 40, 40);
+    --grey2: rgb(60, 60, 60);
+    --grey3: rgb(80, 80, 80);
+    --grey4: rgb(120, 120, 120);
+
+    --border-color: white;
+
+    --radius: 15px;
+    --standardMargin: 15px;
+ 
+    background-color: var(--grey1);
+    color: white;
+ 
+    margin: 0px;
+    padding: 0px;
+         
+    margin-right: 2%;
+    margin-left: 8%;
+    margin-top: 5%;
+     
+    font-family: museo-sans-rounded, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+ 
+}
+
+button {
+    background-color: var(--grey4);
+    padding: 15px;
+    display: inline-block;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    color: white;
+    font-size: 16pt;
+}
+button:hover {background-color: var(--grey3);}
+button:focus {outline:0;}
+ 
+h1 {
+    color: var(--blue);
+    text-align: center;
+    background-color: var(--grey2);
+    padding: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: var(--radius);
+}
+ 
+h2 {
+    color: var(--green);
+}
+ 
+a { color: #66D9EF; }
+a:hover { color: #A6E22E; }
+ 
+form {
+ 
+}
+ 
+input[type=text] {
+    
+}
+
+input[type=color] {
+    width: 4em;
+    height: 2em;
+    background-color: var(--grey4);
+}
+ 
+.center {
+    background-color: var(--grey3);
+    margin: auto;
+    margin-bottom: 10%;
+    width: 70%;
+    padding: 5%;
+    height: max-content;
+    border-radius: var(--radius);
+}
+ 
+.center * {
+    margin: auto;
+    display: block;
+}
+
+.inline {
+    margin: var(--standardMargin);
+}
+
+.inline * {
+    display: inline-block;
+}
+
+.leftalign * {
+    margin: var(--standardMargin);
+    text-align: left;
+}
+
+
+table {
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+}
+
+tr:nth-child(even) { background-color: #00000033}
+
+tr:hover { background-color: rgba(255, 255, 255, 0.281);}
+
+th {
+    text-align: left;
+    background-color: #4CAF50;
+}
