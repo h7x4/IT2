@@ -1,0 +1,103 @@
+@import "colors";
+
+body {
+    background-color: $grey1;
+    color: white;
+ 
+    margin: 0px;
+    padding: 0px;
+
+    margin: {
+        right: 2%;
+        left: 8%;
+        top: 5%;
+    }
+     
+    font: {
+        family: museo-sans-rounded, sans-serif;
+        weight: 300;
+        style: normal;
+    }
+}
+
+button {
+    background-color: $grey4;
+    padding: 15px;
+    display: inline-block;
+    border: 2px solid $border-color;
+    border-radius: $radius;
+    color: white;
+    font-size: 16pt;
+    
+    &:hover {background-color: $grey3;}
+    &:focus {outline:0;}
+}
+ 
+h1 {
+    color: $blue;
+    text-align: center;
+    background-color: $grey2;
+    padding: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: $radius;
+}
+ 
+h2 {
+    color: $green;
+}
+ 
+a { 
+    color: #66D9EF;
+    &:hover { color: #A6E22E; }
+}
+
+input[type=color] {
+    width: 4em;
+    height: 2em;
+    background-color: $grey4;
+}
+ 
+.center {
+    background-color: $grey3;
+    margin: auto;
+    margin-bottom: 10%;
+    width: 70%;
+    padding: 5%;
+    height: max-content;
+    border-radius: $radius;
+    
+    * {
+        margin: auto;
+        display: block;
+    }
+}
+
+.inline {
+    margin: $standardMargin;
+    * {display: inline-block;}
+}
+
+.leftalign * {
+    margin: $standardMargin;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid $border-color;
+    padding: 8px;
+}
+
+th {
+    text-align: left;
+    background-color: #4CAF50;
+}
+
+tr {
+	&:nth-child(even) { background-color: #00000033;}
+	&:hover { background-color: rgba(255, 255, 255, 0.281);}
+}
