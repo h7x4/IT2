@@ -54,6 +54,27 @@ input[type=color] {
   background-color: #787878;
 }
 
+table {
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid white;
+  padding: 8px;
+}
+
+th {
+  text-align: left;
+  background-color: #4CAF50;
+}
+
+tr:nth-child(even) {
+  background-color: #00000033;
+}
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.281);
+}
+
 .center {
   background-color: #505050;
   margin: auto;
@@ -80,23 +101,32 @@ input[type=color] {
   text-align: left;
 }
 
-table {
-  width: 100%;
+.textboxGrid {
+  display: grid;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: auto;
+  grid-row-gap: 20px;
 }
-
-td, th {
-  border: 1px solid white;
-  padding: 8px;
+.textboxGrid * {
+  size: 100%;
+  padding: 40px 80px;
+  background-color: #787878;
 }
-
-th {
-  text-align: left;
-  background-color: #4CAF50;
+.textboxGrid .linkElement {
+  border: 1px solid black;
 }
-
-tr:nth-child(even) {
-  background-color: #00000033;
+.textboxGrid .linkElement:hover {
+  background-color: #505050;
+  cursor: pointer;
 }
-tr:hover {
-  background-color: rgba(255, 255, 255, 0.281);
+.textboxGrid .linkElement a:hover {
+  text-decoration: underline;
+  color: #66D9EF;
+}
+.textboxGrid .linkElement * {
+  margin: 0px;
+  padding: 0px;
+  background-color: transparent;
 }
