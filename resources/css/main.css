@@ -105,13 +105,15 @@ tr:hover {
   display: grid;
   justify-content: space-evenly;
   align-content: space-evenly;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: auto;
+  grid-column-gap: 20px;
   grid-row-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 .textboxGrid * {
   size: 100%;
-  padding: 40px 80px;
+  margin: 0px;
+  padding: 30px 0px;
+  text-align: center;
   background-color: #787878;
 }
 .textboxGrid .linkElement {

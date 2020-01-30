@@ -30,16 +30,19 @@
     align-content: space-evenly;
 
     grid: {
-        template-columns: repeat(3, 1fr);
-
-        column-gap: auto;
+        column-gap: 20px;
         row-gap: 20px;
+
+        template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
 
     * {
 
         size: 100%;
-        padding: 40px 80px;
+        margin: 0px;
+        padding: 30px 0px;
+        text-align: center;
+        
         background-color: $grey4;
 
     }
