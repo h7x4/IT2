@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oppgave 1</title>
+    <link rel="stylesheet" href="../../resources/css/main.css">
+    <script async src="./oppgave.js"></script>
+</head>
+<body>
+
+    <h1>Påskerennet 2020 - Olastøl, Hardanger</h1>
+
+    <div class="center"id="graphics">
+        <img src="images/easter-154509.svg"> <!-- Tatt fra https://pixabay.com/vectors/easter-spring-grass-lawn-154509/ -->
+    </div>
+
+    <div class="center" id="registration">
+
+        <h2>Legg til deltaker</h2>
+
+        <div class="inline">
+            <form id="addParticipantForm">
+                <label for="nameRegistration">Navn på deltaker:</label>
+                <input type="text" id="nameRegistration" placeholder="Ole" required>
+                <label for="ageRegistration">Alder:</label>
+                <input type="number" id="ageRegistration" min="0" max="130" placeholder="20" required>
+                <input type="submit" id="addParticipant" value="Legg til deltaker">
+            </form>
+        </div>
+
+        <div class="inline">
+            <form id="updateResultsForm">
+                <label for="nameSelector">Velg deltaker:</label>
+                <select id="nameSelector"></select>
+                <label for="activity1">Resultat 1:</label>
+                <input type="number" id="activity1" min="0" max="100">
+                <label for="activity2">Resultat 2:</label>
+                <input type="number" id="activity2" min="0" max="100">
+                <label for="activity3">Resultat3:</label>
+                <input type="number" id="activity3" min="0" max="100">
+                <input type="submit" id="updateResults" value="Oppdater resultater">
+            </form>
+        </div>
+    </div>
+
+    <div class="center">
+        <table id="participants">
+            <tr>
+                <th>Navn</th>
+                <th>Alder</th>
+                <th>Resultat 1</th>
+                <th>Resultat 2</th>
+                <th>Resultat 3</th>
+                <th>Resultatsum</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="center">
+        <button id="printResultsButton">Print resultater</button>
+        <table id="results"></table>
+    </div>
+    
+</body>
+</html>

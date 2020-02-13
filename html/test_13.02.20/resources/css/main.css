@@ -1,0 +1,131 @@
+body {
+  background-color: #282828;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  margin-right: 2%;
+  margin-left: 8%;
+  margin-top: 5%;
+  font-family: museo-sans-rounded, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+button {
+  background-color: #787878;
+  padding: 15px;
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  font-size: 16pt;
+}
+button:hover {
+  background-color: #505050;
+}
+button:focus {
+  outline: 0;
+}
+
+h1 {
+  color: #2883d0;
+  text-align: center;
+  background-color: #3c3c3c;
+  padding: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 15px;
+}
+
+h2 {
+  color: #91e22c;
+}
+
+a {
+  color: #66D9EF;
+}
+a:hover {
+  color: #A6E22E;
+}
+
+input[type=color] {
+  width: 4em;
+  height: 2em;
+  background-color: #787878;
+}
+
+table {
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid white;
+  padding: 8px;
+}
+
+th {
+  text-align: left;
+  background-color: #4CAF50;
+}
+
+tr:nth-child(even) {
+  background-color: #00000033;
+}
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.281);
+}
+
+.center {
+  background-color: #505050;
+  margin: auto;
+  margin-bottom: 10%;
+  width: 70%;
+  padding: 5%;
+  height: max-content;
+  border-radius: 15px;
+}
+.center * {
+  margin: auto;
+}
+
+.inline {
+  margin: 15px;
+}
+.inline * {
+  display: inline-block;
+}
+
+.leftalign * {
+  margin: 15px;
+  text-align: left;
+}
+
+.textboxGrid {
+  display: grid;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: auto;
+  grid-row-gap: 20px;
+}
+.textboxGrid * {
+  size: 100%;
+  padding: 40px 80px;
+  background-color: #787878;
+}
+.textboxGrid .linkElement {
+  border: 1px solid black;
+}
+.textboxGrid .linkElement:hover {
+  background-color: #505050;
+  cursor: pointer;
+}
+.textboxGrid .linkElement a:hover {
+  text-decoration: underline;
+  color: #66D9EF;
+}
+.textboxGrid .linkElement * {
+  margin: 0px;
+  padding: 0px;
+  background-color: transparent;
+}
