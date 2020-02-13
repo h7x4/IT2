@@ -1,0 +1,1 @@
+const tasks = {"tasks": [{"name": "Oppgave 1", "path": "./oppgaver/oppgave1/oppgave.html"}]}
