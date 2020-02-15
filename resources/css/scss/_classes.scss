@@ -19,7 +19,7 @@
 }
 
 .leftalign * {
-    margin: $standardMargin;
+    margin: 15px;
     text-align: left;
 }
 
@@ -47,7 +47,7 @@
 
     }
 
-    .linkElement {
+    .linkGridElement {
         border: 1px solid black;
 
         &:hover {

@@ -1,9 +1,15 @@
+//sass --no-source-map --charset main.scss ../main.css
+
+/* Colors */
 @import "colors";
+
+
+/* General styling */
 
 body {
     background-color: $grey1;
     color: white;
- 
+    
     margin: 0px;
     padding: 0px;
 
@@ -12,27 +18,18 @@ body {
         left: 8%;
         top: 5%;
     }
-     
+    
     font: {
         family: museo-sans-rounded, sans-serif;
+        size: 14pt;
         weight: 300;
         style: normal;
     }
 }
 
-button {
-    background-color: $grey4;
-    padding: 15px;
-    display: inline-block;
-    border: 2px solid $border-color;
-    border-radius: $radius;
-    color: white;
-    font-size: 16pt;
-    
-    &:hover {background-color: $grey3;}
-    &:focus {outline:0;}
-}
- 
+
+/* Text elements */
+
 h1 {
     color: $blue;
     text-align: center;
@@ -42,14 +39,44 @@ h1 {
     margin-right: 10%;
     border-radius: $radius;
 }
- 
+
 h2 {
     color: $green;
 }
- 
+
 a { 
     color: $linkStill;
     &:hover {color: $linkHover;}
+}
+
+
+/* Special elements */
+
+button {
+    background-color: $grey4;
+    border: 2px solid $border-color;
+    color: white;
+    padding: 4px 12px;
+    margin: 2px 12px;
+    font-size: 14pt;
+    
+    &:hover {background-color: $grey3;}
+    &:focus {outline:0;}
+
+    &.big {
+        padding: 15px;
+        border-radius: $radius;
+        font-size: 18pt;
+    }
+}
+
+
+/* Inputs */
+
+input {
+    padding: 4px 12px;
+    margin: 2px 12px;
+    font-size: 14pt;
 }
 
 input[type=color] {
@@ -57,6 +84,13 @@ input[type=color] {
     height: 2em;
     background-color: $grey4;
 }
+
+input[type=submit] {
+    @extend button;
+}
+
+
+/* Table elements */
 
 table {
     width: 100%;
@@ -76,5 +110,8 @@ tr {
 	&:nth-child(even) { background-color: #00000033;}
 	&:hover { background-color: rgba(255, 255, 255, 0.281);}
 }
+
+
+/* Import */
 
 @import "classes";

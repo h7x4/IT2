@@ -1,3 +1,5 @@
+/* Colors */
+/* General styling */
 body {
   background-color: #282828;
   color: white;
@@ -7,26 +9,12 @@ body {
   margin-left: 8%;
   margin-top: 5%;
   font-family: museo-sans-rounded, sans-serif;
+  font-size: 14pt;
   font-weight: 300;
   font-style: normal;
 }
 
-button {
-  background-color: #787878;
-  padding: 15px;
-  display: inline-block;
-  border: 2px solid white;
-  border-radius: 15px;
-  color: white;
-  font-size: 16pt;
-}
-button:hover {
-  background-color: #505050;
-}
-button:focus {
-  outline: 0;
-}
-
+/* Text elements */
 h1 {
   color: #2883d0;
   text-align: center;
@@ -48,12 +36,41 @@ a:hover {
   color: #A6E22E;
 }
 
+/* Special elements */
+button, input[type=submit] {
+  background-color: #787878;
+  border: 2px solid white;
+  color: white;
+  padding: 4px 12px;
+  margin: 2px 12px;
+  font-size: 14pt;
+}
+button:hover, input[type=submit]:hover {
+  background-color: #505050;
+}
+button:focus, input[type=submit]:focus {
+  outline: 0;
+}
+button.big, input.big[type=submit] {
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 18pt;
+}
+
+/* Inputs */
+input {
+  padding: 4px 12px;
+  margin: 2px 12px;
+  font-size: 14pt;
+}
+
 input[type=color] {
   width: 4em;
   height: 2em;
   background-color: #787878;
 }
 
+/* Table elements */
 table {
   width: 100%;
 }
@@ -75,6 +92,7 @@ tr:hover {
   background-color: rgba(255, 255, 255, 0.281);
 }
 
+/* Import */
 .center {
   background-color: #505050;
   margin: auto;
@@ -116,18 +134,18 @@ tr:hover {
   text-align: center;
   background-color: #787878;
 }
-.textboxGrid .linkElement {
+.textboxGrid .linkGridElement {
   border: 1px solid black;
 }
-.textboxGrid .linkElement:hover {
+.textboxGrid .linkGridElement:hover {
   background-color: #505050;
   cursor: pointer;
 }
-.textboxGrid .linkElement a:hover {
+.textboxGrid .linkGridElement a:hover {
   text-decoration: underline;
   color: #66D9EF;
 }
-.textboxGrid .linkElement * {
+.textboxGrid .linkGridElement * {
   margin: 0px;
   padding: 0px;
   background-color: transparent;

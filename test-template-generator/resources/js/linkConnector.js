@@ -3,11 +3,11 @@ const grid = document.getElementsByClassName("textboxGrid")[0];
 
 for (i=0; i<taskArray.length; i++) {
 
-    const linkElement = document.createElement("div");
-    linkElement.className = "linkElement";
+    const linkGridElement = document.createElement("div");
+    linkGridElement.className = "linkGridElement";
     const path = taskArray[i]["path"];
 
-    linkElement.addEventListener("click", function () {
+    linkGridElement.addEventListener("click", function () {
         window.location.href = path;
     } )
 
@@ -17,6 +17,6 @@ for (i=0; i<taskArray.length; i++) {
     link.innerHTML = taskArray[i]["name"];
 
     h2.appendChild(link);
-    linkElement.appendChild(h2);
-    grid.appendChild(linkElement);
+    linkGridElement.appendChild(h2);
+    grid.appendChild(linkGridElement);
 }
