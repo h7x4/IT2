@@ -32,6 +32,7 @@ h2 {
 a {
   color: #66D9EF;
 }
+
 a:hover {
   color: #A6E22E;
 }
@@ -45,12 +46,15 @@ button, input[type=submit] {
   margin: 2px 12px;
   font-size: 14pt;
 }
-button:hover, input[type=submit]:hover {
+
+button:hover, input:hover[type=submit] {
   background-color: #505050;
 }
-button:focus, input[type=submit]:focus {
+
+button:focus, input:focus[type=submit] {
   outline: 0;
 }
+
 button.big, input.big[type=submit] {
   padding: 15px;
   border-radius: 15px;
@@ -88,6 +92,7 @@ th {
 tr:nth-child(even) {
   background-color: #00000033;
 }
+
 tr:hover {
   background-color: rgba(255, 255, 255, 0.281);
 }
@@ -99,9 +104,12 @@ tr:hover {
   margin-bottom: 10%;
   width: 70%;
   padding: 5%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   border-radius: 15px;
 }
+
 .center * {
   margin: auto;
   display: block;
@@ -110,6 +118,7 @@ tr:hover {
 .inline {
   margin: 15px;
 }
+
 .inline * {
   display: inline-block;
 }
@@ -120,13 +129,19 @@ tr:hover {
 }
 
 .textboxGrid {
+  display: -ms-grid;
   display: grid;
-  justify-content: space-evenly;
-  align-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
+
 .textboxGrid * {
   size: 100%;
   margin: 0px;
@@ -134,17 +149,21 @@ tr:hover {
   text-align: center;
   background-color: #787878;
 }
+
 .textboxGrid .linkGridElement {
   border: 1px solid black;
 }
+
 .textboxGrid .linkGridElement:hover {
   background-color: #505050;
   cursor: pointer;
 }
+
 .textboxGrid .linkGridElement a:hover {
   text-decoration: underline;
   color: #66D9EF;
 }
+
 .textboxGrid .linkGridElement * {
   margin: 0px;
   padding: 0px;
