@@ -5,20 +5,20 @@ eller så må vi ta vekk det andre, men vi står fortsatt alltid igjen med ett a
 */
 
 function almostIncreasingSequence(sequence) {
-    let decreaseCounter=0;
-    for (elements in sequence){
-        if (sequence[elements] > sequence[parseInt(elements)+1]) {
-            decreaseCounter++;
-            if (decreaseCounter > 1) {
-                return false;
-            }
-        }
+  let decreaseCounter = 0;
+  for (elements in sequence){
+    if (sequence[elements] > sequence[parseInt(elements) + 1]) {
+      decreaseCounter++;
+      if (decreaseCounter > 1) {
+        return false;
+      }
     }
-    return true;
+  }
+  return true;
 }
 
 /* Test */
-console.log("[1,3,2,1]" + " -> " + almostIncreasingSequence([1,3,2,1]));
-console.log("[1,3,2]" + " -> " + almostIncreasingSequence([1,3,2]));
-console.log("[1,3,2,4,5,6,8]" + " -> " + almostIncreasingSequence([1,3,2,4,5,6,8]));
-console.log("[1,3,2,4,5,6,8,2]" + " -> " + almostIncreasingSequence([1,3,2,4,5,6,8,2]));
+console.log(`[1,3,2,1] -> ${almostIncreasingSequence([1,3,2,1])}`);
+console.log(`[1,3,2] -> " + ${almostIncreasingSequence([1,3,2])}`);
+console.log(`[1,3,2,4,5,6,8] -> " + ${almostIncreasingSequence([1,3,2,4,5,6,8])}`);
+console.log(`[1,3,2,4,5,6,8,2] -> " + ${almostIncreasingSequence([1,3,2,4,5,6,8,2])}`);
