@@ -114,6 +114,10 @@ tr:hover {
   margin: auto;
 }
 
+.center canvas {
+  border: 5px solid black;
+}
+
 .inline {
   margin: 15px;
 }
