@@ -2,8 +2,8 @@
 const pixelSize = 20; //Cannot be odd
 let pixelAmount = 20;
 let score = 0;
-if (localStorage.highscore) {
-  var highscore = localStorage.highscore; //TODO: global let inside if statement?
+if (window.localStorage.highscore) {
+  var highscore = window.localStorage.highscore; //TODO: global let inside if statement?
 } else {
   highscore = 0;
 }
@@ -11,9 +11,15 @@ if (localStorage.highscore) {
 /* Register HTML DOM elements by variables */
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
-const startButton = document.getElementById('start'); //TODO: Add canvas size selector, score, higscore,
+const startButton = document.getElementById('start');
+const resetButton = document.getElementById('reset');
+const scoreSpan = document.getElementById('score');
+const highscoreSpan = document.getElementById('highscore');
 const pixelAmountInput = document.getElementById('pixelAmount');
 const pixelAmountForm = document.getElementById('pixelAmountForm');
+
+scoreSpan.innerHTML = score;
+highscoreSpan.innerHTML = highscore;
 
 /* Initialize HTML */
 canvas.style.display = 'block';
@@ -30,21 +36,7 @@ const snake = {
     [1, 0],
     [0, 0],
   ],
-
-  /* Draw the snake by the tail array */
-  draw() {
-    ctx.fillStyle = this.color;
-
-    const clearPosition = this.tail.pop().map(point => point * pixelSize);
-    ctx.clearRect(clearPosition[0], clearPosition[1], pixelSize, pixelSize);
-
-    for (let tailPoint = 0; tailPoint < this.tail.length; tailPoint++) {
-      /* Correct tailpoint x and y to actual size */
-      const realPosition = this.tail[tailPoint].map(point => point * pixelSize);
-
-      ctx.fillRect(realPosition[0], realPosition[1], pixelSize, pixelSize);
-    }
-  },
+  deadTail: [0, 0],
 
   /* Generate the next tail array */
   updateTail() {
@@ -63,6 +55,27 @@ const snake = {
         this.tail.unshift([this.tail[0][0], this.tail[0][1] + 1]);
         break;
     }
+
+    this.deadTail = this.tail.pop();
+  },
+
+  /* Draw the snake by the tail array */
+  draw() {
+    ctx.fillStyle = this.color;
+
+    const clearPosition = this.deadTail.map(point => point * pixelSize);
+    ctx.clearRect(clearPosition[0], clearPosition[1], pixelSize, pixelSize);
+
+    for (let tailPoint = 0; tailPoint < this.tail.length; tailPoint++) {
+      /* Correct tailpoint x and y to actual size */
+      const realPosition = this.tail[tailPoint].map(point => point * pixelSize);
+
+      ctx.fillRect(realPosition[0], realPosition[1], pixelSize, pixelSize);
+    }
+  },
+
+  addTail() {
+    this.tail.push[this.deadTail];
   },
 
   tailCrossing() {
@@ -75,11 +88,14 @@ const apple = {
   position: [Math.floor(pixelAmount / 2), Math.floor(pixelAmount / 2)],
   color: 'red',
 
+  /* Sets position to the middle based on pixelAmount */
+  setStartPosition() {
+    this.position = [Math.floor(pixelAmount / 2), Math.floor(pixelAmount / 2)];
+  },
+
   /* Generate new coordinates */
   generatePosition() {
-    this.position = this.position.map(
-      () => Math.floor(Math.random() * pixelAmount) //TODO: Don't put the apple on top of the snake
-    );
+    this.position = game.getClearSpotRandom(); //TODO: Switch between the functions based on how much the snake has eaten
     console.debug(`%cApple position: ${this.position}`, 'color: red');
   },
 
@@ -95,7 +111,8 @@ const apple = {
 /* Handles everything that happens on the canvas */
 const game = {
   fps: 5,
-  over: false,
+  hasEnded: false,
+  isPaused: false,
 
   /* Game init function */
   init() {
@@ -108,9 +125,10 @@ const game = {
     snake.updateTail();
     snake.draw();
 
-    if (JSON.stringify(snake.tail[0]) === JSON.stringify(apple.position)) {
+    if (snake.tail[0].toString() === apple.position.toString()) {
       console.debug('Snake ate apple');
       score += 1;
+      scoreSpan.innerHTML = score;
       snake.updateTail();
       apple.generatePosition();
       apple.draw();
@@ -122,28 +140,84 @@ const game = {
       snake.tail[0][1] < 0 ||
       snake.tailCrossing()
     ) {
-      this.over = true;
+      this.hasEnded = true;
     }
+  },
+
+  reset() {
+    /*TODO: get board size from localstorage */
+    snake.tail = [
+      [3, 0],
+      [2, 0],
+      [1, 0],
+      [0, 0],
+    ];
+    snake.direction = 'right';
+    apple.setStartPosition();
+    game.hasEnded = false;
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  },
+
+  /* Function to determine whether a coordinate hits the snake
+   *  Retuns a bool
+   */
+  hitsSnake(coordinate) {
+    return snake.tail
+      .map(snakeCoordinate => snakeCoordinate.toString()) //TODO: Rewrite
+      .toString()
+      .includes(coordinate.toString());
+  },
+
+  /* Function to be used if the snake is covering a small part of the map
+   *  Returns a coordinate array
+   */
+  getClearSpotRandom() {
+    while (true) {
+      const coordinate = Array.from({length: 2}, () =>
+        Math.floor(Math.random() * pixelAmount)
+      );
+
+      if (!this.hitsSnake(coordinate)) {
+        return coordinate;
+      }
+    }
+  },
+
+  /* Function to be used if the snake is covering a big part of the map
+   *  Returns a coordinate array
+   */
+  getClearSpotForce() {
+    clearSpots = [];
+
+    for (let x = 0; x < pixelAmount; x++) {
+      for (let y = 0; y < pixelAmount; y++) {
+        if (!this.hitsSnake([x, y])) {
+          clearSpots.push([x, y]);
+        }
+      }
+    }
+    return clearSpots[Math.floor(Math.random() * clearSpots.length)];
   },
 };
 
 /* Wrapper function requesting a gameloop */
 function getLoop() {
   /* Slow down loop by game fps */
-  setTimeout(() => {
-    window.requestAnimationFrame(getLoop);
-    game.loop();
+  if (!game.hasEnded) {
+    setTimeout(() => {
+      window.requestAnimationFrame(getLoop);
+      game.loop();
+    }, 1000 / game.fps);
+  } else {
+    console.debug('Game over');
 
-    if (game.over) {
-      console.debug('Game over'); //TODO: Exit game loop properly
-
-      if (score > highscore) {
-        console.debug('New highcore');
-        highscore = score;
-        window.localStorage.setItem('highscore', highscore);
-      }
+    if (score > highscore) {
+      console.debug('New highcore');
+      highscore = score;
+      window.localStorage.setItem('highscore', highscore);
     }
-  }, 1000 / game.fps);
+  }
 }
 
 /* Add event listeners */
@@ -156,6 +230,7 @@ startButton.addEventListener(
   },
   false
 );
+resetButton.addEventListener('click', game.reset, false);
 pixelAmountForm.addEventListener('submit', updatePixelAmount, false);
 
 /* Updates size of canvas */
@@ -164,10 +239,11 @@ function updatePixelAmount(evt) {
   pixelAmount = parseInt(pixelAmountInput.value);
   console.debug('Updated canvas size');
   ctx.canvas.width = ctx.canvas.height = (pixelAmount + 1) * pixelSize;
+  apple.setStartPosition();
 }
 
 /* Clear higscore from localStorage */
-const clearHighscore = () => (localStorage.highscore = 0);
+const clearHighscore = () => (window.localStorage.highscore = 0);
 
 /* Update direction for snake */
 function updateDirection(evt) {
@@ -200,7 +276,7 @@ function updateDirection(evt) {
         snake.direction = 'down';
       }
       break;
-
-    //TODO: Add pause function
   }
+
+  //TODO: Add pause function
 }
