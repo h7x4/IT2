@@ -77,11 +77,24 @@ input[type=color] {
 /* Table elements */
 table {
   width: 100%;
+  display: table;
+}
+
+tbody {
+  display: table-row-group;
+  width: auto;
+}
+
+tr {
+  display: table-row;
+  width: auto;
 }
 
 td, th {
   border: 1px solid white;
   padding: 8px;
+  display: table-cell;
+  width: auto;
 }
 
 th {
@@ -112,6 +125,10 @@ tr:hover {
 
 .center * {
   margin: auto;
+}
+
+.center > :not(table) {
+  display: block;
 }
 
 .center canvas {

@@ -7,9 +7,9 @@
     height: max-content;
     border-radius: $radius;
     
-    * {
-        margin: auto;
-    }
+    * { margin: auto;}
+
+    &>:not(table){ display: block;}
 
     canvas {
       border: 5px solid black;
