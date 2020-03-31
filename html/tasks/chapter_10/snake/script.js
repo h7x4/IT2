@@ -2,7 +2,7 @@
 
 /* Initialize variables */
 const pixelSize = 20; //Cannot be odd
-const pixelAmount = 20;
+const pixelAmount = 30;
 
 /* Register HTML DOM elements by variables */
 const canvas = document.getElementById('game');
