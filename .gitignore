@@ -1,2 +1,4 @@
 #Ignore vscode settings:
 .vscode
+
+test-template-generator/resources/external-lib/
