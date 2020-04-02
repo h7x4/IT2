@@ -7,94 +7,94 @@
 /* General styling */
 
 body {
-    background-color: $grey1;
-    color: white;
-    
-    margin: 0px;
-    padding: 0px;
+  background-color: $grey1;
+  color: white;
+  
+  margin: 0px;
+  padding: 0px;
 
-    margin: {
-        right: 2%;
-        left: 8%;
-        top: 5%;
-    }
-    
-    font: {
-        family: museo-sans-rounded, sans-serif;
-        size: 14pt;
-        weight: 300;
-        style: normal;
-    }
+  margin: {
+    right: 2%;
+    left: 8%;
+    top: 5%;
+  }
+  
+  font: {
+    family: museo-sans-rounded, sans-serif;
+    size: 14pt;
+    weight: 300;
+    style: normal;
+  }
 }
 
 
 /* Text elements */
 
 h1 {
-    color: $blue;
-    text-align: center;
-    background-color: $grey2;
-    padding: 15px;
-    margin-left: 10%;
-    margin-right: 10%;
-    border-radius: $radius;
+  color: $blue;
+  text-align: center;
+  background-color: $grey2;
+  padding: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: $radius;
 }
 
 h2 {
-    color: $green;
+  color: $green;
 }
 
 a { 
-    color: $linkStill;
-    &:hover {color: $linkHover;}
+  color: $linkStill;
+  &:hover {color: $linkHover;}
 }
 
 
 /* Special elements */
 
 button {
-    background-color: $grey4;
-    border: 2px solid $border-color;
-    color: white;
-    padding: 4px 12px;
-    margin: 2px 12px;
-    font-size: 14pt;
-    
-    &:hover {background-color: $grey3;}
-    &:focus {outline:0;}
+  background-color: $grey4;
+  border: 2px solid $border-color;
+  color: white;
+  padding: 4px 12px;
+  margin: 2px 12px;
+  font-size: 14pt;
+  
+  &:hover {background-color: $grey3;}
+  &:focus {outline:0;}
 
-    &.big {
-        padding: 15px;
-        border-radius: $radius;
-        font-size: 18pt;
-    }
+  &.big {
+    padding: 15px;
+    border-radius: $radius;
+    font-size: 18pt;
+  }
 }
 
 
 /* Inputs */
 
 input {
-    padding: 4px 12px;
-    margin: 2px 12px;
-    font-size: 14pt;
+  padding: 4px 12px;
+  margin: 2px 12px;
+  font-size: 14pt;
 }
 
 input[type=color] {
-    width: 4em;
-    height: 2em;
-    background-color: $grey4;
+  width: 4em;
+  height: 2em;
+  background-color: $grey4;
 }
 
 input[type=submit] {
-    @extend button;
+  @extend button;
 }
 
 
 /* Table elements */
 
 table {
-    width: 100%;
-    display: table;
+  width: 100%;
+  display: table;
 }
 
 tbody {
@@ -108,15 +108,15 @@ tr {
 }
 
 td, th {
-    border: 1px solid $border-color;
-    padding: 8px;
-    display: table-cell;
-    width: auto;
+  border: 1px solid $border-color;
+  padding: 8px;
+  display: table-cell;
+  width: auto;
 }
 
 th {
-    text-align: left;
-    background-color: #4CAF50;
+  text-align: left;
+  background-color: #4CAF50;
 }
 
 tr {

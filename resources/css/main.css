@@ -127,7 +127,7 @@ tr:hover {
   margin: auto;
 }
 
-.center > :not(table) {
+.center >  {
   display: block;
 }
 
@@ -163,6 +163,7 @@ tr:hover {
 }
 
 .textboxGrid * {
+  display: auto;
   size: 100%;
   margin: 0px;
   padding: 30px 0px;
@@ -170,8 +171,15 @@ tr:hover {
   background-color: #787878;
 }
 
-.textboxGrid .linkGridElement {
+.textboxGrid .gridElement, .textboxGrid .linkGridElement {
   border: 1px solid black;
+  overflow-wrap: break-word;
+}
+
+.textboxGrid .gridElement *, .textboxGrid .linkGridElement * {
+  margin: 3px;
+  padding: 0px 30px;
+  background-color: transparent;
 }
 
 .textboxGrid .linkGridElement:hover {
@@ -184,8 +192,6 @@ tr:hover {
   color: #66D9EF;
 }
 
-.textboxGrid .linkGridElement * {
-  margin: 0px;
-  padding: 0px;
-  background-color: transparent;
+.hoverable:hover {
+  background-color: rgba(0, 0, 0, 0.2);
 }
