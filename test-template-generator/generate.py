@@ -9,6 +9,9 @@ from shutil import rmtree
 #Copy CSS
 file_util.copy_file('../resources/css/main.css', './resources/css/main.css')
 
+#Copy error lib
+file_util.copy_file('../resources/global/error.js', './resources/js/error.js')
+
 jsonPath = './resources/js/tasksJSON.js'
 jsonData = {}
 jsonData['tasks'] = []
