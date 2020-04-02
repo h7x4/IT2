@@ -115,7 +115,7 @@ tr:hover {
 .center {
   background-color: #505050;
   margin: auto;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   width: 70%;
   padding: 5%;
   height: -webkit-max-content;
@@ -213,7 +213,7 @@ tr:hover {
 }
 
 .error {
-  display: none;
+  display: block;
   border: 1px solid black;
   border-radius: 5px;
   background-color: #f92677;
@@ -221,4 +221,11 @@ tr:hover {
   padding: 10px;
   text-align: center;
   margin: 15px auto;
+}
+
+.chart {
+  margin: auto;
+  margin-bottom: 5%;
+  width: 70%;
+  border: 3px solid #91e22c;
 }

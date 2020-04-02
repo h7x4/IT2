@@ -6,7 +6,7 @@ const noteForm = document.getElementById('noteInput');
 const noteText = document.getElementById('noteInputText');
 const noteSubmit = document.getElementById('noteInputSubmit');
 const notes = document.getElementById('notes');
-const error1 = document.getElementById('testError');
+const error1 = document.getElementById('errorHolder');
 
 /* Add event listeners */
 
@@ -22,11 +22,12 @@ jQuery('button').click('click', buttonDelete);
 function addNote(evt) {
   evt.preventDefault();
 
+  error1.innerHTML = '';
+
   if (noteText.value === '') {
-    error1.style.display = 'block';
+    const error = createError('Add notes into the textarea');
+    error1.appendChild(error);
     return;
-  } else {
-    error1.style.display = 'none';
   }
 
   const text = noteText.value;
@@ -53,4 +54,17 @@ function addNote(evt) {
 function buttonDelete(evt) {
   evt.currentTarget.parentNode.parentNode.removeChild(evt.currentTarget.parentNode);
   localStorage.setItem('notes', notes.innerHTML);
+}
+
+function createError(errorMessage) {
+  const error = document.createElement("div");
+  error.setAttribute('class', 'error');
+  
+  const errorBold = document.createElement("b");
+  errorBold.innerHTML = 'ERROR:';
+  error.appendChild(errorBold);
+
+  errorBold.after(errorMessage);
+
+  return error;
 }

@@ -1,7 +1,7 @@
 .center {
   background-color: $grey3;
   margin: auto;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   width: 70%;
   padding: 5%;
   height: max-content;
@@ -108,7 +108,7 @@
 }
 
 .error {
-  display: none;
+  display: block;
   border: 1px solid black;
   border-radius: 5px;
   background-color: $red;
@@ -116,4 +116,11 @@
   padding: 10px;
   text-align: center;
   margin: $standardMargin auto;
+}
+
+.chart {
+  margin: auto;
+  margin-bottom: 5%;
+  width: 70%;
+  border: 3px solid $green;
 }
