@@ -3,7 +3,6 @@
 /* Colors */
 @import "colors";
 
-
 /* General styling */
 
 body {
@@ -95,6 +94,7 @@ input[type=submit] {
 table {
   width: 100%;
   display: table;
+  border-spacing: 0px;
 }
 
 tbody {

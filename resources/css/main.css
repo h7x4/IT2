@@ -78,6 +78,7 @@ input[type=color] {
 table {
   width: 100%;
   display: table;
+  border-spacing: 0px;
 }
 
 tbody {
@@ -125,9 +126,6 @@ tr:hover {
 
 .center * {
   margin: auto;
-}
-
-.center >  {
   display: block;
 }
 
@@ -136,11 +134,12 @@ tr:hover {
 }
 
 .inline {
-  margin: 15px;
+  margin: 15px 0px;
 }
 
 .inline * {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .leftalign * {
@@ -163,8 +162,7 @@ tr:hover {
 }
 
 .textboxGrid * {
-  display: auto;
-  size: 100%;
+  display: block;
   margin: 0px;
   padding: 30px 0px;
   text-align: center;
@@ -172,12 +170,13 @@ tr:hover {
 }
 
 .textboxGrid .gridElement, .textboxGrid .linkGridElement {
+  display: initial;
   border: 1px solid black;
   overflow-wrap: break-word;
 }
 
 .textboxGrid .gridElement *, .textboxGrid .linkGridElement * {
-  margin: 3px;
+  margin: auto;
   padding: 0px 30px;
   background-color: transparent;
 }
@@ -194,4 +193,21 @@ tr:hover {
 
 .hoverable:hover {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.inlineTable {
+  display: table;
+  margin: 20px 0px;
+}
+
+.inlineTable tbody {
+  display: table-row-group;
+}
+
+.inlineTable tr {
+  display: table-row;
+}
+
+.inlineTable tr th, .inlineTable tr td {
+  display: table-cell;
 }
