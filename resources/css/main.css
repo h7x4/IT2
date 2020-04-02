@@ -211,3 +211,14 @@ tr:hover {
 .inlineTable tr th, .inlineTable tr td {
   display: table-cell;
 }
+
+.error {
+  display: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #f92677;
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+  margin: 15px auto;
+}

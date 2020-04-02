@@ -6,6 +6,7 @@ const noteForm = document.getElementById('noteInput');
 const noteText = document.getElementById('noteInputText');
 const noteSubmit = document.getElementById('noteInputSubmit');
 const notes = document.getElementById('notes');
+const error1 = document.getElementById('testError');
 
 /* Add event listeners */
 
@@ -20,6 +21,13 @@ jQuery('button').click('click', buttonDelete);
 
 function addNote(evt) {
   evt.preventDefault();
+
+  if (noteText.value === '') {
+    error1.style.display = 'block';
+    return;
+  } else {
+    error1.style.display = 'none';
+  }
 
   const text = noteText.value;
   noteText.value = '';
