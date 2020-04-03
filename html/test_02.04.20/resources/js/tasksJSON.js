@@ -1,0 +1,1 @@
+const tasks = {"tasks": [{"name": "Oppgave 1", "path": "./oppgaver/oppgave1/oppgave.html"}, {"name": "Oppgave 2", "path": "./oppgaver/oppgave2/oppgave.html"}, {"name": "Oppgave 3", "path": "./oppgaver/oppgave3/oppgave.html"}]}
