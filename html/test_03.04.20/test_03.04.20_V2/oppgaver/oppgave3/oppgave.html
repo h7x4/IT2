@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Oppgave 3</title>
+    <link rel="stylesheet" href="../../resources/css/main.css" />
+
+    <!-- Data stored locally as json -->
+    <script src="./data.js"></script>
+
+    <!-- External libs for charts and chart themes -->
+    <script src="../../resources/external-lib/highcharts.js"></script>
+    <script src="../../resources/external-lib/highchartsTheme.js"></script>
+    
+    <script async src="./oppgave.js"></script>
+  </head>
+  <body>
+    <h1>Oppgave 3</h1>
+    <div class="center">
+      <h2>Corona outbreak statistics</h2>
+      <table id='statisticsTable' class="inlineTable">
+        <tr>
+          <th>Country</th>
+          <th>Total Cases</th>
+          <th>Total Deaths</th>
+          <th>Total Recovered</th>
+          <th>Total Cases/1M pop</th>
+          <th>Total Deaths/1M pop</th>
+        </tr>
+      </table>
+      <p>Data taken from: 
+        <a href="https://no.wikipedia.org/wiki/Liste_over_land_etter_innbyggertall)">Wikipedia</a>
+        <a href="https://www.worldometers.info/coronavirus/">Worldometers</a>
+        <div class="inline">Downloaded: <span id="date"></span></div>
+      </p>
+    </div>
+    <div class="center">
+      <p>Type the first letter of the country you're looking for after clicking on the selector in order to search</p>
+      <div class="inline">
+          <label for="countrySelector">Land: </label>
+          <select id="countrySelector"></select>
+      </div>
+      <table id="selectTable" class="inlineTable"></table>
+    </div>
+    <div id="chart" class="chart"></div>
+  </body>
+</html>

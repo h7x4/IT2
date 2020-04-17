@@ -1,0 +1,231 @@
+/* Colors */
+/* General styling */
+body {
+  background-color: #282828;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  margin-right: 2%;
+  margin-left: 8%;
+  margin-top: 5%;
+  font-family: museo-sans-rounded, sans-serif;
+  font-size: 14pt;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Text elements */
+h1 {
+  color: #2883d0;
+  text-align: center;
+  background-color: #3c3c3c;
+  padding: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 15px;
+}
+
+h2 {
+  color: #91e22c;
+}
+
+a {
+  color: #66D9EF;
+}
+
+a:hover {
+  color: #A6E22E;
+}
+
+/* Special elements */
+button, input[type=submit] {
+  background-color: #787878;
+  border: 2px solid white;
+  color: white;
+  padding: 4px 12px;
+  margin: 2px 12px;
+  font-size: 14pt;
+}
+
+button:hover, input:hover[type=submit] {
+  background-color: #505050;
+}
+
+button:focus, input:focus[type=submit] {
+  outline: 0;
+}
+
+button.big, input.big[type=submit] {
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 18pt;
+}
+
+/* Inputs */
+input {
+  padding: 4px 12px;
+  margin: 2px 12px;
+  font-size: 14pt;
+}
+
+input[type=color] {
+  width: 4em;
+  height: 2em;
+  background-color: #787878;
+}
+
+/* Table elements */
+table {
+  width: 100%;
+  display: table;
+  border-spacing: 0px;
+}
+
+tbody {
+  display: table-row-group;
+  width: auto;
+}
+
+tr {
+  display: table-row;
+  width: auto;
+}
+
+td, th {
+  border: 1px solid white;
+  padding: 8px;
+  display: table-cell;
+  width: auto;
+}
+
+th {
+  text-align: left;
+  background-color: #4CAF50;
+}
+
+tr:nth-child(even) {
+  background-color: #00000033;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.281);
+}
+
+/* Import */
+.center {
+  background-color: #505050;
+  margin: auto;
+  margin-bottom: 5%;
+  width: 70%;
+  padding: 5%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 15px;
+}
+
+.center * {
+  margin: auto;
+  display: block;
+}
+
+.center canvas {
+  border: 5px solid black;
+}
+
+.inline {
+  margin: 15px 0px;
+}
+
+.inline * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.leftalign * {
+  margin: 15px;
+  text-align: left;
+}
+
+.textboxGrid {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.textboxGrid * {
+  display: block;
+  margin: 0px;
+  padding: 30px 0px;
+  text-align: center;
+  background-color: #787878;
+}
+
+.textboxGrid .gridElement, .textboxGrid .linkGridElement {
+  display: initial;
+  border: 1px solid black;
+  overflow-wrap: break-word;
+}
+
+.textboxGrid .gridElement *, .textboxGrid .linkGridElement * {
+  margin: auto;
+  padding: 0px 30px;
+  background-color: transparent;
+}
+
+.textboxGrid .linkGridElement:hover {
+  background-color: #505050;
+  cursor: pointer;
+}
+
+.textboxGrid .linkGridElement a:hover {
+  text-decoration: underline;
+  color: #66D9EF;
+}
+
+.hoverable:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.inlineTable {
+  display: table;
+  margin: 20px 0px;
+}
+
+.inlineTable tbody {
+  display: table-row-group;
+}
+
+.inlineTable tr {
+  display: table-row;
+}
+
+.inlineTable tr th, .inlineTable tr td {
+  display: table-cell;
+}
+
+.error {
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #f92677;
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.chart {
+  margin: auto;
+  margin-bottom: 5%;
+  width: 70%;
+  border: 3px solid #91e22c;
+}

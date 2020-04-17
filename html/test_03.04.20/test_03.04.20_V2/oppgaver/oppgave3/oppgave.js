@@ -2,6 +2,8 @@
 
 /* Initialize variables */
 
+class Country {}
+
 const countries = [];
 
 /* Map data from json file */
@@ -12,7 +14,7 @@ for (let index = 0; index < data.length; index++) {
     deaths: data[index].deaths,
     recovered: data[index].recovered,
     casesPerPop: Math.round((data[index].cases * 1000000) / data[index].population),
-    deathsPerPop: Math.round((data[index].cases * 1000000) / data[index].population),
+    deathsPerPop: Math.round((data[index].deaths * 1000000) / data[index].population),
   };
 }
 
@@ -57,7 +59,7 @@ const histogramConfig = {
 
 /* Register HTML DOM elements by variables */
 
-const table = document.getElementById('statisticsTable');
+const mainTable = document.getElementById('statisticsTable');
 const selector = document.getElementById('countrySelector');
 const selectTable = document.getElementById('selectTable');
 const date = document.getElementById("date");
@@ -65,13 +67,12 @@ const date = document.getElementById("date");
 /* Add event listeners */
 
 selector.addEventListener('change', evt => {
-  selectTable.innerHTML = '';
-
-  selectTable.innerHTML = table.querySelectorAll('tr')[0].innerHTML;
+  /* Update selectTable by selected value */
+  selectTable.innerHTML = mainTable.querySelectorAll('tr')[0].innerHTML;
   selectTable.appendChild(countryRow(countries[selector.value]));
 });
 
-/* Initialize HTML with code */
+/* Initialize HTML with functions */
 
 for (let index = 0; index < countries.length; index++) {
   /* Select options */
@@ -81,12 +82,12 @@ for (let index = 0; index < countries.length; index++) {
   selector.appendChild(option);
 
   /* Add row to statisticsTable */
-  table.appendChild(countryRow(countries[index]));
+  mainTable.appendChild(countryRow(countries[index]));
 }
 
-table.appendChild(totalRow());
+mainTable.appendChild(totalRow());
 
-date.innerHTML = dataDate;
+date.innerHTML = dataDate.toDateString(); //From ./data.js
 
 document.getElementById('chart').style.height = '500px';
 Highcharts.setOptions(Highcharts.theme);
@@ -142,6 +143,7 @@ function totalRow() {
     deathsPerPop: null,
   };
 
+  /* Sum object properties */
   function sumAll(type) {
     let result = 0;
     for (let index = 0; index < countries.length; index++) {
